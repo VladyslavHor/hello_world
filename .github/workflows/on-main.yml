@@ -2,25 +2,27 @@ name: Run tests
 
 on:
   pull_request:
-    - master
+    branches:
+      - master
 
 jobs:
   tests:
     runs-on: ubuntu-latest
 
     steps:
-      - terraform init
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
-jobs:
-  tests:
-    runs-on: ubuntu-latest
+      - name: Set up Terraform
+        uses: hashicorp/setup/terraform@v2
 
-    steps:
-      - terraform validate
+      - name: Initialize Terraform
+        run: terraform init
 
-jobs:
-  tests:
-    runs-on: ubuntu-latest
+      - name: Validate Terraform configuration
+        run: terraform validate
 
-    steps: terraform plan
-
+      - name: Plan Terraform deployment
+        run: terraform plan
