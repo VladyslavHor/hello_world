@@ -27,7 +27,6 @@ jobs:
       - name: Plan Terraform deployment
         run: terraform plan
 
-jobs:
   tflint:
     runs-on: ubuntu-latest
 
