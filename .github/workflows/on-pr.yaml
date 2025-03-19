@@ -1,6 +1,11 @@
 name: Run tests
 
 on:
+  push:
+    branches:
+      - master
+      - dev
+
   pull_request:
     branches:
       - master
@@ -26,6 +31,10 @@ jobs:
 
       - name: Plan Terraform deployment
         run: terraform plan
+
+      - name: Apply Terraform configuration (for Dev only)
+        if: github.ref == 'refs/heads/dev'
+        run: terraform apply
 
   tflint:
     runs-on: ubuntu-latest
