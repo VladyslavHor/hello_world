@@ -2,10 +2,15 @@
 # General
 .DS_Store
 *.DS_Store
+*.github.DS_Store
+*.github.workflows.DS_Store
 .AppleDouble
 .LSOverride
 
 ### Terraform ###
+
+#dependency lock file
+*.terraform.lock.hcl
 
 # Local .terraform directories
 **/.terraform/*
@@ -14,7 +19,6 @@
 *.tfstate
 *.tfstate.*
 .terraform.tfstate
-.terraform.lock.hcl
 
 # Crash log files
 crash.log
