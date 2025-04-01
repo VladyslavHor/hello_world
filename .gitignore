@@ -1,6 +1,7 @@
 ### macOS ###
 # General
 .DS_Store
+*.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -12,8 +13,8 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-*.terraform.tfstate
-*.terraform.lock.hcl
+.terraform.tfstate
+.terraform.lock.hcl
 
 # Crash log files
 crash.log
